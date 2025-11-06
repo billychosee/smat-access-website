@@ -8,12 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center mb-4">
-              <Image
-                src="/smatacces_logo.png"
-                alt="SmatAccess Logo"
-                width={60}
-                height={60}
-              />
+              <div className="text-2xl font-bold text-[#2090C4]">SmatAccess</div>
             </div>
             <p className="text-gray-400 mb-4 max-w-md">
               Simplifying Security Across Africa. SmatAccess — Smart Access Control for Homes, Offices & Enterprises.

@@ -42,12 +42,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <Image
-                src="/smatacces_logo.png"
-                alt="SmatAccess Logo"
-                width={60}
-                height={60}
-              />
+              <div className="text-2xl font-bold text-[#2090C4]">SmatAccess</div>
             </Link>
           </div>
 

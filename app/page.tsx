@@ -348,15 +348,9 @@ export default function Home() {
           style={{ height: "calc(100vh - 8rem)" }}
         >
           {/* Background Image */}
-          <Image
-            src="/hero.png"
-            alt="SmatAccess Hero Background"
-            layout="fill"
-            objectFit="cover"
-            className="z-0"
-          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#2090C4] to-[#1a7bb7] z-0"></div>
           {/* Dark Gradient Overlay */}
-          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
 
           {/* Content Container */}
           <div className="relative pb-16 w-full z-20 px-5 md:px-20">
@@ -546,7 +540,7 @@ export default function Home() {
       {/* --- */}
 
       {/* SECTION 5 – WHY CHOOSE SMATACCESS - REDESIGNED WITH IMAGES AND ANIMATIONS */}
-      <section className="py-16 bg-linear-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full opacity-5">
           <div className="absolute top-10 left-10 w-64 h-64 bg-[#2090C4] rounded-full filter blur-3xl"></div>
@@ -574,13 +568,9 @@ export default function Home() {
                 >
                   {/* Image container with overlay */}
                   <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={feature.imageSrc}
-                      alt={feature.title}
-                      layout="fill"
-                      objectFit="cover"
-                      className="transition-transform duration-700 group-hover:scale-110"
-                    />
+                    <div className={`w-full h-full ${feature.color} flex items-center justify-center transition-transform duration-700 group-hover:scale-110`}>
+                      <IconComponent className="w-16 h-16 text-white" />
+                    </div>
                     <div
                       className={`absolute inset-0 ${feature.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
                     ></div>
@@ -720,8 +710,8 @@ export default function Home() {
 
             <div className="relative">
               {/* Gradient overlays for fade effect */}
-              <div className="absolute left-0 top-0 bottom-0 w-12 bg-linear-to-r from-white to-transparent z-10"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-12 bg-linear-to-l from-white to-transparent z-10"></div>
+              <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white to-transparent z-10"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white to-transparent z-10"></div>
 
               {/* Logo container with horizontal scroll */}
               <div className="overflow-x-auto pb-4 scrollbar-hide">
@@ -732,14 +722,9 @@ export default function Home() {
                       className="shrink-0 group cursor-pointer"
                     >
                       <div className="relative w-32 h-16 md:w-40 md:h-20 bg-gray-100 rounded-lg flex items-center justify-center p-4 transition-all duration-300 group-hover:bg-gray-200 group-hover:shadow-md">
-                        <Image
-                          src={client.logo}
-                          alt={client.name}
-                          width={120}
-                          height={60}
-                          objectFit="contain"
-                          className="filter grayscale opacity-70 group-hover:filter-none group-hover:opacity-100 transition-all duration-300"
-                        />
+                        <div className="w-full h-full flex items-center justify-center">
+                          <span className="text-gray-500 font-medium text-sm text-center">{client.name}</span>
+                        </div>
                       </div>
                       <p className="text-center text-sm text-gray-600 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         {client.name}
@@ -756,7 +741,7 @@ export default function Home() {
       {/* --- */}
 
       {/* SECTION 7 – PRICING PREVIEW - SLEEKEST REDESIGN */}
-      <section className="py-16 bg-linear-to-br from-gray-50 to-gray-100 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full opacity-5">
           <div className="absolute top-10 right-10 w-64 h-64 bg-blue-300 rounded-full filter blur-3xl"></div>
@@ -781,7 +766,7 @@ export default function Home() {
                 className={`relative flex flex-col p-8 rounded-3xl shadow-xl transition-all duration-500 hover:scale-[1.05] group
                   ${
                     tier.isPopular
-                      ? "bg-linear-to-br from-[#2090C4] to-[#1a7bb7] text-white shadow-2xl ring-4 ring-offset-2 ring-[#2090C4] z-10"
+                      ? "bg-gradient-to-br from-[#2090C4] to-[#1a7bb7] text-white shadow-2xl ring-4 ring-offset-2 ring-[#2090C4] z-10"
                       : "bg-white text-gray-900 ring-1 ring-gray-200 hover:ring-[#2090C4]/50"
                   }
                 `}
@@ -927,13 +912,9 @@ export default function Home() {
                 {/* Image Container - Fixed to prevent overflow */}
                 <div className="relative h-56 w-full flex items-center justify-center mb-8 z-10 border-2 border-gray-300 rounded-lg overflow-hidden">
                   <div className="relative w-full h-full">
-                    <Image
-                      src={device.imageSrc}
-                      alt={device.name}
-                      layout="fill"
-                      objectFit="cover" // Changed from "contain" to "cover"
-                      className="transition-transform duration-500 filter drop-shadow-xl"
-                    />
+                    <div className={`w-full h-full bg-gray-200 flex items-center justify-center transition-transform duration-500`}>
+                      <span className="text-gray-500 font-semibold text-lg">{device.name}</span>
+                    </div>
                   </div>
                   {/* Shadow/Base to suggest floating */}
                   <div className="absolute bottom-0 w-3/4 h-3 bg-black rounded-full opacity-10 blur-md transition-all duration-500 group-hover:w-4/5"></div>
@@ -973,7 +954,7 @@ export default function Home() {
 
       {/* SECTION 9 – CALL TO ACTION - Standard Design */}
       {/* SECTION 9 – CALL TO ACTION - Sleek Design with Animations */}
-      <section className="relative py-20 bg-linear-to-br from-[#2090C4] via-[#1a7bb7] to-[#0f5d8c] overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-br from-[#2090C4] via-[#1a7bb7] to-[#0f5d8c] overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -1032,7 +1013,7 @@ export default function Home() {
                 <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-500"></span>
 
                 {/* Animated background gradient */}
-                <span className="absolute inset-0 bg-linear-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-all duration-1000"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-all duration-1000"></span>
               </button>
             </div>
 
