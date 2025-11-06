@@ -348,7 +348,13 @@ export default function Home() {
           style={{ height: "calc(100vh - 8rem)" }}
         >
           {/* Background Image */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#2090C4] to-[#1a7bb7] z-0"></div>
+          <Image
+            src="/hero.png"
+            alt="SmatAccess Hero Background"
+            layout="fill"
+            objectFit="cover"
+            className="z-0"
+          />
           {/* Dark Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent z-10"></div>
 
@@ -568,9 +574,13 @@ export default function Home() {
                 >
                   {/* Image container with overlay */}
                   <div className="relative h-48 overflow-hidden">
-                    <div className={`w-full h-full ${feature.color} flex items-center justify-center transition-transform duration-700 group-hover:scale-110`}>
-                      <IconComponent className="w-16 h-16 text-white" />
-                    </div>
+                    <Image
+                      src={feature.imageSrc}
+                      alt={feature.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-700 group-hover:scale-110"
+                    />
                     <div
                       className={`absolute inset-0 ${feature.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
                     ></div>
@@ -722,9 +732,14 @@ export default function Home() {
                       className="shrink-0 group cursor-pointer"
                     >
                       <div className="relative w-32 h-16 md:w-40 md:h-20 bg-gray-100 rounded-lg flex items-center justify-center p-4 transition-all duration-300 group-hover:bg-gray-200 group-hover:shadow-md">
-                        <div className="w-full h-full flex items-center justify-center">
-                          <span className="text-gray-500 font-medium text-sm text-center">{client.name}</span>
-                        </div>
+                        <Image
+                          src={client.logo}
+                          alt={client.name}
+                          width={120}
+                          height={60}
+                          objectFit="contain"
+                          className="filter grayscale opacity-70 group-hover:filter-none group-hover:opacity-100 transition-all duration-300"
+                        />
                       </div>
                       <p className="text-center text-sm text-gray-600 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         {client.name}
@@ -912,9 +927,13 @@ export default function Home() {
                 {/* Image Container - Fixed to prevent overflow */}
                 <div className="relative h-56 w-full flex items-center justify-center mb-8 z-10 border-2 border-gray-300 rounded-lg overflow-hidden">
                   <div className="relative w-full h-full">
-                    <div className={`w-full h-full bg-gray-200 flex items-center justify-center transition-transform duration-500`}>
-                      <span className="text-gray-500 font-semibold text-lg">{device.name}</span>
-                    </div>
+                    <Image
+                      src={device.imageSrc}
+                      alt={device.name}
+                      layout="fill"
+                      objectFit="cover"
+                      className="transition-transform duration-500 filter drop-shadow-xl"
+                    />
                   </div>
                   {/* Shadow/Base to suggest floating */}
                   <div className="absolute bottom-0 w-3/4 h-3 bg-black rounded-full opacity-10 blur-md transition-all duration-500 group-hover:w-4/5"></div>
